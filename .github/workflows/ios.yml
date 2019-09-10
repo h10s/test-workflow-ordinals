@@ -1,0 +1,22 @@
+name: iOS CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build my iOS App
+      run: echo building...
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test my iOS App
+      run: echo testing...
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Publish my iOS App to TestFlight
+      run: echo publishing

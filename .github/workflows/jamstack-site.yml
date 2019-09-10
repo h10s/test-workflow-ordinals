@@ -1,0 +1,22 @@
+name: JAMStack Site CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build my site
+      run: echo building...
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test my site
+      run: echo testing...
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Publish my site
+      run: echo publishing

@@ -1,0 +1,22 @@
+name: API CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build my API
+      run: echo building...
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test my API
+      run: echo testing...
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Publish my API
+      run: echo publishing
