@@ -1,12 +1,17 @@
 name: Android CI
-on: push
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Build my Android app
-      run: echo building...
-
+      run: |
+        echo building...
+        sleep 300
+        sleep 300
+        sleep 300
+        sleep 300
+    
   test:
     needs: build
     runs-on: ubuntu-latest
